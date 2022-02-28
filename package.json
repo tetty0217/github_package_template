@@ -1,0 +1,45 @@
+{
+  "name": "package-template",
+  "version": "1.0.0",
+  "description": "GitHub Packages の骨組み",
+  "homepage": "https://github.com/org/package-template",
+  "bugs": "https://github.com/org/package-template/issues",
+  "license": "UNLICENSED",
+  "author": "tetty <dev.tetty@gmail.com>",
+  "type": "commonjs",
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/org/package-template"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "commit": "git cz",
+    "lint": "run-p 'lint:*'",
+    "lint:eslint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "lint:prettier": "prettier --check '**/*.{js,ts,tsx}'",
+    "fix": "run-s fix:prettier fix:eslint",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:prettier": "yarn lint:prettier --write",
+    "release": "semantic-release",
+    "release:dry": "yarn release -d"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "eslint": "8.5.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "semantic-release": "^18.0.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

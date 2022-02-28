@@ -1,7 +1,7 @@
 package-template 
 ===================
 
-Organization で npm package を開発するときのテンプレートです。
+GitHub で npm package を開発するときのテンプレートです。
 
 <!-- テンプレートの内容 -->
 ## Getting Started
